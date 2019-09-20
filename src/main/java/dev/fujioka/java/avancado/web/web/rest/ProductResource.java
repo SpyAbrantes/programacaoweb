@@ -15,9 +15,23 @@ public class ProductResource {
     @Autowired
     private ProductService productService;
 
+    @GetMapping("/product/{name}")
+    public List<Product> getProductList(@PathVariable String name) {
+        return productService.listaProdutos(name);
+    }
+
+    @GetMapping("/product/{id}")
+    public List<Product> getListById(Long id){
+        return productService.getListById(id);
+    }
+
+    @GetMapping("/product/{description}")
+    public List<Product> getListByDesc(String description){
+        return productService.getListByDesc(description);
+    }
+
     @GetMapping("/product")
-    public List<Product> getProductList() {
-        return productService.findAll();
+    public List<Product> getProductList() { return productService.findAll();
     }
 
 

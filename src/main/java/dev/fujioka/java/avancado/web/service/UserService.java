@@ -43,4 +43,22 @@ public class UserService implements CrudInterface<User> {
     public long count() {
         return userRepository.count();
     }
+
+    public List<User> getListByFirstName(String firstName){
+        return userRepository.findUserByFirstName(firstName);
+    }
+
+    public List<User> getListByUserId(Long id) {
+        return userRepository.findUserById(id);
+    }
+
+    public List<User> getListByLastName(String lastName){
+        return userRepository.findUserByLastName(lastName);
+    }
+
+    public List<User> getListByLogin(String login){
+        return userRepository.findUserByLogin(login);
+    }
+
+
 }

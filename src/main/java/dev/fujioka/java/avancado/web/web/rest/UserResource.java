@@ -20,6 +20,25 @@ public class UserResource {
     public List<User> getUsers() {
         return userService.findAll();
     }
+    @GetMapping("/user/{firstName}")
+    public List<User> getListUserByFirstName(String firstName){
+    return userService.getListByFirstName(firstName);
+
+    }
+    @GetMapping("/user/{id}")
+    public List<User> getListByUserId(Long id){
+    return userService.getListByUserId(id);
+    }
+
+    @GetMapping("/user/{lastName}")
+    public List<User> getGetListByUserLastName(String lastName){
+        return userService.getListByLastName(lastName);
+    }
+
+    @GetMapping("/user/{login}")
+    public List<User> getListByUserLogin(String login){
+        return userService.getListByLogin(login);
+    }
 
     @PostMapping("/user")
     public ResponseEntity<User>
